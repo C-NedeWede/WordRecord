@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="cn.edu.gdut.roombasic.HomeFragment"
+        android:label="Word">
+        <action
+            android:id="@+id/action_homeFragment_to_insertWordFragment"
+            app:destination="@id/insertWordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertWordFragment"
+        android:name="cn.edu.gdut.roombasic.InsertWordFragment"
+        android:label="Add">
+        <action
+            android:id="@+id/action_insertWordFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
