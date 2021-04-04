@@ -208,8 +208,8 @@ public class HomeFragment extends Fragment {
 
             //在滑动的时候，画出浅灰色背景和垃圾桶图标，增强删除的视觉效果
 
-            Drawable icon = ContextCompat.getDrawable(requireActivity(),R.drawable.ic_baseline_delete_forever_24);
-            Drawable background = new ColorDrawable(Color.LTGRAY);
+            final Drawable icon = ContextCompat.getDrawable(requireActivity(),R.drawable.ic_baseline_delete_forever_24);
+            final Drawable background = new ColorDrawable(Color.LTGRAY);
             @Override
             public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
                 super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);

@@ -1,7 +1,6 @@
 package cn.edu.gdut.words;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
@@ -17,13 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
     //    Button buttonInsert, buttonClear;
     NavController controller;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        controller = Navigation.findNavController(this,R.id.fragment);
-        NavigationUI.setupActionBarWithNavController(this,controller);
+        controller = Navigation.findNavController(this, R.id.fragment);
+        NavigationUI.setupActionBarWithNavController(this, controller);
 //        aSwitch = findViewById(R.id.switch1);
 //        aSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
 //            if (isChecked) {
@@ -32,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
 //                recyclerView.setAdapter(myAdapter1);
 //            }
 //        });
-
-
-
 
 
 //        buttonInsert = findViewById(R.id.buttonInsert);
@@ -93,11 +90,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        if (controller.getCurrentDestination().getId()==R.id.insertWordFragment){
+        if (controller.getCurrentDestination().getId() == R.id.insertWordFragment) {
             InputMethodManager imm = (InputMethodManager) this.getSystemService(INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(findViewById(R.id.fragment).getWindowToken(),0);
+            imm.hideSoftInputFromWindow(findViewById(R.id.fragment).getWindowToken(), 0);
             controller.navigateUp();
-        }else{
+        } else {
             finish();
         }
         return super.onSupportNavigateUp();
@@ -110,5 +107,7 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     @Override
-    public void onBackPressed() { onSupportNavigateUp(); }
+    public void onBackPressed() {
+        onSupportNavigateUp();
+    }
 }
